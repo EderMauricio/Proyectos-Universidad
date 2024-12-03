@@ -1,0 +1,1202 @@
+#include "pch.h"
+#include <iostream>
+#include <conio.h>
+#include <ctime>
+#include <vector>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <Windows.h>
+#include <time.h>
+
+
+
+
+using namespace System;
+using namespace std;
+
+
+struct Nacionalidad
+{
+    char nac[200];
+
+ 
+
+};
+
+struct UsuarioHotel
+{
+
+    char NickNae[100];
+
+}UsuarioHotel[20];
+
+struct Documento
+{
+    long DNI;
+
+}Documento[20];
+
+struct Cliente
+{
+    char Nombre[2000];
+
+    int Edad;
+
+    long NumeroC;
+
+
+
+    char Incidente[1000];
+
+    char Sexo[200];
+
+    char msje[200];
+
+    struct Documento Dni;
+
+    struct Nacionalidad naci;
+
+}Cliente[350];
+
+int opcion;
+int main(int argc, char* argv[])
+{
+
+    system("color B0");
+
+    //printf("PROYECTO BARRA DE CARGA ");
+
+    Sleep(30);
+
+    system("cls");
+
+    for (int b = 0; b < 50; b++)
+    {
+
+        
+ 
+
+        printf("\nCargando sistema HOTEL RUSTICO, por favor espere mientras se inicia ...\n ");
+
+        printf("--------------------------------------------------\n ");
+
+        for (int c = 0; c < b; c++)
+
+        {
+            printf("%c", 219);
+        }
+        printf("\n--------------------------------------------------\n ");
+
+
+        printf("Powered by UPC Studio OS");
+        Sleep(30);
+        system("cls");
+
+    }
+
+
+
+
+    time_t now = time(0);// para sacar la fecha y hora del sistema de la computadora
+    tm* time = localtime(&now);
+    vector<string> dia_semana;
+    dia_semana.push_back("Domingo");
+    dia_semana.push_back("Lunes");
+    dia_semana.push_back("Martes");
+    dia_semana.push_back("Miercoles");
+    dia_semana.push_back("Jueves");
+    dia_semana.push_back("Viernes");
+    dia_semana.push_back("Sabado");
+
+    vector<string> mes;
+    mes.push_back("Enero");
+    mes.push_back("Febrero");
+    mes.push_back("Marzo");
+    mes.push_back("Abril");
+    mes.push_back("Mayo");
+    mes.push_back("Junio");
+    mes.push_back("Julio");
+    mes.push_back("Agosto");
+    mes.push_back("Septiembre");
+    mes.push_back("Octubre");
+    mes.push_back("Noviembre");
+    mes.push_back("Diciembre");
+
+    int CantPers, Estadia;
+
+    float igv;
+
+    char MetPago;
+
+    float Precio1dia = 250, Precio2dias = 480, Precio3dias = 520, Precio4dias = 600, Precio5dias = 735, Precio6dias = 853, Precio7dias = 900, MonTotal;
+
+    int year = 1900 + time->tm_year;
+
+    int cali,num,d,num2;
+
+    float op = 0.00;
+
+    float gravada;
+
+
+    while (1 == 1) {
+
+
+        printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176);
+        cout << endl;
+
+        printf("\n\n\t %c%c%c%c%c%c%c%c%c%c%c%c PLATAFORMA DEL HOTEL RUSTICO 2022 ", 178, 178, 178, 178, 178, 178, 178, 178, 178, 178, 178, 178);
+
+        printf(" %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 169, 178, 178, 178, 178, 178, 178, 178, 178, 178, 178, 178, 178, 178, 178);
+
+        cout << endl;
+
+        cout << "\nFecha: " << dia_semana[time->tm_wday] << ", ";
+
+        cout << time->tm_mday << " de " << mes[time->tm_mon] << " del " << year << endl;
+
+        cout << "Hora: " << time->tm_hour << ":" << time->tm_min << ":" << time->tm_sec << endl;
+
+        cout << "\nEscoja una opcion :  " << endl;
+        cout << "\n[1] Registro de clientes " << endl;
+        cout << "\n[2] Ver la fecha y hora " << endl;
+        cout << "\n[3] Reserva de futuros cuartos " << endl;
+        cout << "\n[4] Mas sobre nosotros " << endl;
+        cout << "\n[5] Califque su estadia en el hotel" << endl;
+        cout << "\n[6] Ver Normas y Reglas del Hotel" << endl;
+        cout << "\nSALIR ---> [7]" << endl;
+
+        cout << endl;
+
+        cout << "ESCOJA ALGUNA DE LAS OPCIONES : ";
+        cin >> opcion;
+
+
+
+        switch (opcion)
+        {
+        case 1:
+            printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205,187);
+           
+            cout << endl;
+
+            printf("                                                                           %c", 186);
+
+            cout << endl;
+            cout << "-------------------- BIENVENIDO AL HOTEL RUSTICO *  *  *   ----------------";
+
+            printf("%c",186);
+            cout << endl;
+            printf("                                                                           %c",186);
+            cout << endl;
+            printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 188);
+
+            cout << "\nFecha: " << dia_semana[time->tm_wday] << ", ";
+            cout << time->tm_mday << " de " << mes[time->tm_mon] << " del " << year << endl;
+            cout << "Hora: " << time->tm_hour << ":" << time->tm_min << ":" << time->tm_sec << endl;
+
+            cout << "\nIngrese la cantidad de personas a hospedarse : ";
+            cin >> CantPers;
+            for (int i = 0; i < CantPers; i++)
+            {
+                rewind(stdin);
+                cout << "\nNombre cliente " << i + 1 << ": ";
+                cin.getline(Cliente[i].Nombre, 2000, '\n');
+                cout << "Edad: ";
+                cin >> Cliente[i].Edad;
+                rewind(stdin);
+                cout << "Sexo: ";
+                cin.getline(Cliente[i].Sexo, 200, '\n');
+                rewind(stdin);
+                cout << "DNI: ";
+                cin>>Cliente[i].Dni.DNI;
+                rewind(stdin);
+
+                cout << "Nacionalidad: ";
+                cin.getline(Cliente[i].naci.nac, 200, '\n');
+
+                rewind(stdin);
+                cout << "Numero Contacto: ";
+                cin >> Cliente[i].NumeroC;
+                cout << "Ingrese estadia del cliente en dias:";
+                cin >> Estadia;
+                cout << "\n--- Tabla de descuento o aumento segun metodo de Pago ---"<<endl;
+                cout << " EFECTIVO : NO HAY DESCUENTO" << endl;
+                cout << " TARJETA  : AUMENTO DE 5%" << endl;
+                cout << " YAPE     : DESCUENTO DE 5%" << endl;
+                cout << " PLIN     : DESCUENTO 15%" << endl;
+                cout << "Metodo de Pago [E: Efectivo - T:Tarjeta - Y:Yape - P:Plin]: ";
+                cin >> MetPago;
+
+
+                cout << "--------------------------------------------------------------------------------------" << endl;
+
+               
+
+                cout << "\n[][][][][][][] BOLETA ELECTRONICA PROCESADA  [][][][][][][] " << endl;
+
+                cout << "Urb. Valentina Zaragoza # 657 " << endl;
+                cout << "R.U.C. ";
+                
+                for (int r = 1; r <= 9; r++)
+                {
+                    num2 = 1 + rand() % (10 - 1);
+
+                    cout << num2;
+                }
+
+                cout << endl;
+
+                cout << "--------------------------------------------------------------------------------------" << endl;
+
+                cout << "[codigo transaccion]:";
+
+                for (d = 1; d <= 10; d++)
+                {
+                    num = 1 + rand() % (11 - 1);
+
+                    cout <<num;
+                }
+
+                cout << "\nFecha: " << dia_semana[time->tm_wday] << ", ";
+                cout << time->tm_mday << " de " << mes[time->tm_mon] << " del " << year << endl;
+                cout << "Hora: " << time->tm_hour << ":" << time->tm_min << ":" << time->tm_sec << endl;
+
+                cout << "\nNOMBRE: " << Cliente[i].Nombre << endl;
+
+                cout << "EDAD:" << Cliente[i].Edad << endl;
+
+                cout << "SEXO: " << Cliente[i].Sexo << endl;
+
+                cout << "DNI: " << Cliente[i].Dni.DNI << endl;
+
+                cout << "NACIONALIDAD:" << Cliente[i].naci.nac << endl;
+
+                cout << "Numero Contacto: " << Cliente[i].NumeroC << endl;
+
+                cout << "Estadia del cliente: "<<Estadia<<endl;
+
+                cout << "Metodo de Pago: "<<MetPago<<endl;
+
+                if (Estadia == 1 && MetPago=='E')
+                {
+
+                    MonTotal = Precio1dia;
+
+                    gravada = Precio1dia-(Precio1dia *0.15);
+
+                    igv = gravada * 0.18;
+
+                    cout << "***** OP. EXONERADAS S/. :     "<<op<<endl;
+
+                    cout << "***** OP. GRAVADAS   S/. :     "<<gravada<<endl;
+
+                    cout << "***** I.G.V.         S/. :     " << igv<<endl;
+
+                    cout << "El monto a pagar es : S/." << gravada+igv << endl;
+
+                    cout << "\n\n\t[CODIGO QR ]" << endl;
+                    cout << endl;
+                    printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                    printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                    printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                    printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                    cout << endl;
+                    cout << endl;
+                    cout << "\nGracias por su preferencia." << endl;
+                    cout << endl;
+                }
+                else
+                {
+                    if (Estadia == 2 && MetPago == 'E')
+                    {
+                        MonTotal = Precio2dias;
+
+                        gravada = Precio2dias - (Precio2dias * 0.15);
+
+                        igv = gravada * 0.18;
+
+                        cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                        cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                        cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                        cout << "El monto a pagar con Efectivo es : S/." << gravada+igv<< endl;
+
+                        cout << "\n\n\t[CODIGO QR ]" << endl;
+                        cout << endl;
+                        printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                        printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                        printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                        printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                        cout << endl;
+                        cout << endl;
+                        cout << "\nGracias por su preferencia." << endl;
+                        cout << endl;
+
+                    }
+                    else
+                    {
+                        if (Estadia == 3 && MetPago=='E')
+                        {
+                            MonTotal = Precio3dias;
+
+                            gravada = Precio3dias - (Precio3dias * 0.15);
+
+                            igv = gravada * 0.18;
+
+                            cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                            cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                            cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                            cout << "El monto a pagar con Efectivo es: S/." << gravada+igv << endl;
+
+                            cout << "\n\n\t[CODIGO QR ]" << endl;
+                            cout << endl;
+                            printf("\n          %c %c %c %c", 177, 177, 177, 254);
+                            printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                            printf("\n          %c %c %c %c", 176, 178, 177, 178);
+                            printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                            cout << endl;
+                            cout << endl;
+                            cout << "\nGracias por su preferencia." << endl;
+                            cout << endl;
+
+                        }
+                        else
+                        {
+                            if (Estadia == 4 && MetPago=='E')
+                            {
+                                MonTotal = Precio4dias;
+
+                                gravada = Precio4dias - (Precio4dias * 0.15);
+
+                                igv = gravada * 0.18;
+
+                                cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                cout << "El monto a pagar con Efectivo es: S/." << gravada + igv << endl;
+
+                                cout << "\n\n\t[CODIGO QR ]" << endl;
+                                cout << endl;
+                                printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                cout << endl;
+                                cout << endl;
+                                cout << "\nGracias por su preferencia." << endl;
+                                cout << endl;
+                            }
+                            else
+                            {
+                                if (Estadia == 5 && MetPago=='E')
+                                {
+                                    MonTotal = Precio5dias;
+
+                                    gravada = Precio5dias - (Precio5dias * 0.15);
+
+                                    igv = gravada * 0.18;
+
+                                    cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                    cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                    cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                    cout << "El monto a pagar con Efectivo es: S/." << gravada + igv << endl;
+
+                                    cout << "\n\n\t[CODIGO QR ]" << endl;
+                                    cout << endl;
+                                    printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                    printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                    printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                    printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                    cout << endl;
+                                    cout << endl;
+                                    cout << "\nGracias por su preferencia." << endl;
+                                    cout << endl;
+                                }
+                                else
+                                {
+                                    if (Estadia == 6 && MetPago=='E')
+                                    {
+                                        MonTotal = Precio6dias;
+
+                                        gravada = Precio6dias - (Precio6dias * 0.15);
+
+                                        igv = gravada * 0.18;
+
+                                        cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                        cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                        cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                        cout << "El monto a pagar con Efectivo es: S/." << gravada + igv << endl;
+
+                                        cout << "\n\n\t[CODIGO QR ]" << endl;
+                                        cout << endl;
+                                        printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                        printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                        printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                        printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                        cout << endl;
+                                        cout << endl;
+                                        cout << "\nGracias por su preferencia." << endl;
+                                        cout << endl;
+                                    }
+                                    else
+                                    {
+                                        if (Estadia==1 && MetPago=='T')
+                                        {
+                                            MonTotal = Precio1dia * 1.05;
+
+                                            gravada = MonTotal - (MonTotal * 0.15);
+
+                                            igv = gravada * 0.18;
+
+                                            cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                            cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                            cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                            cout << "El monto a pagar con Tarjeta es : S/." << gravada+igv<< endl;
+
+                                            cout << "\n\n\t[CODIGO QR ]" << endl;
+                                            cout << endl;
+                                            printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                            printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                            printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                            printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                            cout << endl;
+                                            cout << endl;
+                                            cout << "\nGracias por su preferencia." << endl;
+                                            cout << endl;
+
+                                        }
+                                        else
+                                        {
+                                            if (Estadia==1 && MetPago=='Y')
+                                            {
+                                                MonTotal = Precio1dia * 0.95;
+
+                                                gravada = MonTotal - (MonTotal * 0.15);
+
+                                                igv = gravada * 0.18;
+
+                                                cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                cout << "El monto a pagar con Yape es : S/." << igv+gravada << endl;
+
+                                                cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                cout << endl;
+                                                printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                cout << endl;
+                                                cout << endl;
+                                                cout << "\nGracias por su preferencia." << endl;
+                                                cout << endl;
+
+                                            }
+                                            else
+                                            {
+                                                if (Estadia == 1 && MetPago == 'P')
+                                                {
+                                                    MonTotal = Precio1dia * 0.85;
+
+                                                    gravada = MonTotal - (MonTotal * 0.15);
+
+                                                    igv = gravada * 0.18;
+
+                                                    cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                    cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                    cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                    cout << "El monto a pagar con Plin es: S/." << igv + gravada << endl;
+
+                                                    cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                    cout << endl;
+                                                    printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                    printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                    printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                    printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                    cout << endl;
+                                                    cout << endl;
+                                                    cout << "\nGracias por su preferencia." << endl;
+                                                    cout << endl;
+
+                                                }
+                                                else
+                                                {
+                                                    if (Estadia == 2 && MetPago == 'T')
+                                                    {
+                                                        MonTotal = Precio2dias*1.05;
+
+                                                        gravada = MonTotal - (MonTotal * 0.15);
+
+                                                        igv = gravada * 0.18;
+
+                                                        cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                        cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                        cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                        cout << "El monto a pagar con Tarjeta es : S/." << igv + gravada << endl;
+
+                                                        cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                        cout << endl;
+                                                        printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                        printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                        printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                        printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                        cout << endl;
+                                                        cout << endl;
+                                                        cout << "\nGracias por su preferencia." << endl;
+                                                        cout << endl;
+
+                                                    }
+                                                    else
+                                                    {
+                                                        if (Estadia == 2 && MetPago == 'Y')
+                                                        {
+                                                            MonTotal = Precio2dias * 0.95;
+
+                                                            gravada = MonTotal - (MonTotal * 0.15);
+
+                                                            igv = gravada * 0.18;
+
+                                                            cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                            cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                            cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                            cout << "El monto a pagar con Yape es: S/." << igv + gravada << endl;
+
+                                                            cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                            cout << endl;
+                                                            printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                            printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                            printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                            printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                            cout << endl;
+                                                            cout << endl;
+                                                            cout << "\nGracias por su preferencia." << endl;
+                                                            cout << endl;
+
+                                                        }
+                                                        else
+                                                        {
+                                                            if (Estadia == 2 && MetPago == 'P')
+                                                            {
+                                                                MonTotal = Precio2dias * 0.85;
+
+                                                                gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                igv = gravada * 0.18;
+
+                                                                cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                cout << "El monto a pagar con Plin es : S/." << igv + gravada << endl;
+
+                                                                cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                cout << endl;
+                                                                printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                cout << endl;
+                                                                cout << endl;
+                                                                cout << "\nGracias por su preferencia." << endl;
+                                                                cout << endl;
+
+                                                            }
+                                                            else
+                                                            {
+                                                                if (Estadia == 3 && MetPago == 'T')
+                                                                {
+                                                                    MonTotal = Precio3dias * 1.05;
+
+                                                                    gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                    igv = gravada * 0.18;
+
+                                                                    cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                    cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                    cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                    cout << "El monto a pagar con Tarjeta es : S/." << igv + gravada << endl;
+
+                                                                    cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                    cout << endl;
+                                                                    printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                    printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                    printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                    printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                    cout << endl;
+                                                                    cout << endl;
+                                                                    cout << "\nGracias por su preferencia." << endl;
+                                                                    cout << endl;
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    if (Estadia == 3 && MetPago == 'Y')
+                                                                    {
+                                                                        MonTotal = Precio3dias * 0.95;
+
+                                                                        gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                        igv = gravada * 0.18;
+
+                                                                        cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                        cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                        cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                        cout << "El monto a pagar con Yape es : S/." << igv + gravada << endl;
+
+                                                                        cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                        cout << endl;
+                                                                        printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                        printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                        printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                        printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                        cout << endl;
+                                                                        cout << endl;
+                                                                        cout << "\nGracias por su preferencia." << endl;
+                                                                        cout << endl;
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if (Estadia == 3 && MetPago == 'P')
+                                                                        {
+                                                                            MonTotal = Precio3dias * 0.85;
+
+                                                                            gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                            igv = gravada * 0.18;
+
+                                                                            cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                            cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                            cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                            cout << "El monto a pagar con Plin es : S/." << igv + gravada << endl;
+
+                                                                            cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                            cout << endl;
+                                                                            printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                            printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                            printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                            printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                            cout << endl;
+                                                                            cout << endl;
+                                                                            cout << "\nGracias por su preferencia." << endl;
+                                                                            cout << endl;
+
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            if (Estadia == 4 && MetPago == 'T')
+                                                                            {
+                                                                                MonTotal = Precio4dias * 1.05;
+
+                                                                                gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                                igv = gravada * 0.18;
+
+                                                                                cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                                cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                                cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                                cout << "El monto a pagar con Tarjeta es : S/." << igv + gravada << endl;
+
+                                                                                cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                                cout << endl;
+                                                                                printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                                printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                                printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                                printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                                cout << endl;
+                                                                                cout << endl;
+                                                                                cout << "\nGracias por su preferencia." << endl;
+                                                                                cout << endl;
+
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                if (Estadia == 4 && MetPago == 'Y')
+                                                                                {
+                                                                                    MonTotal = Precio4dias * 0.95;
+
+                                                                                    gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                                    igv = gravada * 0.18;
+
+                                                                                    cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                                    cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                                    cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                                    cout << "El monto a pagar con Yape es : S/." << igv + gravada << endl;
+
+                                                                                    cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                                    cout << endl;
+                                                                                    printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                                    printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                                    printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                                    printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                                    cout << endl;
+                                                                                    cout << endl;
+                                                                                    cout << "\nGracias por su preferencia." << endl;
+                                                                                    cout << endl;
+
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    if (Estadia == 4 && MetPago == 'P')
+                                                                                    {
+                                                                                        MonTotal = Precio4dias * 0.85;
+
+                                                                                        gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                                        igv = gravada * 0.18;
+
+                                                                                        cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                                        cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                                        cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                                        cout << "El monto a pagar con Plin es : S/." << igv + gravada << endl;
+
+                                                                                        cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                                        cout << endl;
+                                                                                        printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                                        printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                                        printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                                        printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                                        cout << endl;
+                                                                                        cout << endl;
+                                                                                        cout << "\nGracias por su preferencia." << endl;
+                                                                                        cout << endl;
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        if (Estadia == 5 && MetPago == 'T')
+                                                                                        {
+
+                                                                                            MonTotal = Precio5dias * 1.05;
+
+                                                                                            gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                                            igv = gravada * 0.18;
+
+                                                                                            cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                                            cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                                            cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                                            cout << "El monto a pagar con Tarjeta es: S/." << igv + gravada << endl;
+
+                                                                                            cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                                            cout << endl;
+                                                                                            printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                                            printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                                            printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                                            printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                                            cout << endl;
+
+                                                                                            cout << endl;
+
+                                                                                            cout << "\nGracias por su preferencia." << endl;
+
+                                                                                            cout << endl;
+
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            if (Estadia == 5 && MetPago == 'Y')
+                                                                                            {
+                                                                                                MonTotal = Precio5dias * 0.95;
+
+                                                                                                gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                                                igv = gravada * 0.18;
+
+                                                                                                cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                                                cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                                                cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                                                cout << "El monto a pagar con Yape es : S/." << igv + gravada << endl;
+
+                                                                                                cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                                                cout << endl;
+                                                                                                printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                                                printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                                                printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                                                printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                                                cout << endl;
+                                                                                                cout << endl;
+                                                                                                cout << "\nGracias por su preferencia." << endl;
+                                                                                                cout << endl;
+
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                if (Estadia == 5 && MetPago == 'P')
+                                                                                                {
+                                                                                                    MonTotal = Precio5dias * 0.85;
+
+                                                                                                    gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                                                    igv = gravada * 0.18;
+
+                                                                                                    cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                                                    cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                                                    cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                                                    cout << "El monto a pagar con Plin es: S/." << igv + gravada << endl;
+
+                                                                                                    cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                                                    cout << endl;
+                                                                                                    printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                                                    printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                                                    printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                                                    printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                                                    cout << endl;
+                                                                                                    cout << endl;
+                                                                                                    cout << "\nGracias por su preferencia." << endl;
+                                                                                                    cout << endl;
+
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    if (Estadia == 6 && MetPago == 'T')
+                                                                                                    {
+                                                                                                        MonTotal = Precio6dias * 1.05;
+
+                                                                                                        gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                                                        igv = gravada * 0.18;
+
+                                                                                                        cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                                                        cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                                                        cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                                                        cout << "El monto a pagar con Tarjeta es : S/." << igv + gravada << endl;
+
+                                                                                                        cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                                                        cout << endl;
+                                                                                                        printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                                                        printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                                                        printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                                                        printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                                                        cout << endl;
+                                                                                                        cout << endl;
+                                                                                                        cout << "\nGracias por su preferencia." << endl;
+                                                                                                        cout << endl;
+
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        if (Estadia == 6 && MetPago == 'Y')
+                                                                                                        {
+                                                                                                            MonTotal = Precio6dias * 0.95;
+
+                                                                                                            gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                                                            igv = gravada * 0.18;
+
+                                                                                                            cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                                                            cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                                                            cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                                                            cout << "El monto a pagar con Yape es : S/." << igv + gravada << endl;
+
+                                                                                                            cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                                                            cout << endl;
+                                                                                                            printf("\n          %c %c %c %c", 254, 177, 177, 254);
+                                                                                                            printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                                                            printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                                                            printf("\n          %c %c %c %c", 254, 177, 177, 176);
+                                                                                                            cout << endl;
+                                                                                                            cout << endl;
+                                                                                                            cout << "\nGracias por su preferencia." << endl;
+                                                                                                            cout << endl;
+
+                                                                                                        }
+                                                                                                        else
+                                                                                                        {
+                                                                                                            if (Estadia == 6 && MetPago == 'P')
+                                                                                                            {
+                                                                                                                MonTotal = Precio6dias * 0.85;
+
+                                                                                                                gravada = MonTotal - (MonTotal * 0.15);
+
+                                                                                                                igv = gravada * 0.18;
+
+                                                                                                                cout << "***** OP. EXONERADAS S/. :     " << op << endl;
+
+                                                                                                                cout << "***** OP. GRAVADAS   S/. :     " << gravada << endl;
+
+                                                                                                                cout << "***** I.G.V.         S/. :     " << igv << endl;
+
+                                                                                                                cout << "El monto a pagar con Plin es : S/." << igv+gravada << endl;
+
+                                                                                                                cout << "\n\n\t[CODIGO QR ]" << endl;
+                                                                                                                cout << endl;
+                                                                                                                printf("\n          %c %c %c %c", 201, 177, 177, 187);
+                                                                                                                printf("\n          %c %c %c %c", 178, 177, 177, 176);
+                                                                                                                printf("\n          %c %c %c %c", 176, 177, 177, 178);
+                                                                                                                printf("\n          %c %c %c %c", 200, 177, 177, 188);
+                                                                                                                cout << endl;
+                                                                                                                cout << endl;
+                                                                                                                cout << "\nGracias por su preferencia." << endl;
+                                                                                                                cout << endl;
+                                                                                                            }
+                                                                                                            else
+                                                                                                            {
+                                                                                                                if (Estadia>=7 )
+                                                                                                                {
+                                                                                                                    float diasAdici = 200;
+
+
+                                                                                                                    cout << "!!! FELICIDADES, HA GANADO UN EXCLUSIVO TOUR POR MACHU PICCHU con desayuno, almuerzo y cena incluido !!! ";
+
+
+                                                                                                                    printf("!COMPLETAMENTE GRATIS!");
+
+
+
+
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+            break;
+        case 2:
+            cout << "\nFecha: " << dia_semana[time->tm_wday] << ", ";
+
+            cout << time->tm_mday << " de " << mes[time->tm_mon] << " del " << year << endl;
+
+            cout << "Hora: " << time->tm_hour << ":" << time->tm_min << ":" << time->tm_sec << endl;
+
+            break;
+
+        case 3:
+
+            cout << "\n\tPara reservas futuras , comunicarse al : " << endl;
+            
+            cout << "\n\t 01-78786532 "<<endl;
+
+            cout << "Y ACCEDA A UN 40% DE DESCUENTO " << endl;
+
+            cout << endl;
+
+
+            break;
+
+        case 4:
+
+            cout << "\n\tHoteles Rustico "<<endl;
+
+            cout << "-----Sobre nosotros-----  "<<endl;
+
+            cout << "Nuestra cadena de hoteles en Cusco tiene el prestigio de atender hace mas de 50 a";
+
+            printf("%c", 164); 
+
+            cout << "os de manera eficiente a nuestros" << endl;
+
+            cout<<"diferentes clientes.Los fundadores Isaiah Rogers y Thomas Wills Wright se encargaron de "<<endl;
+
+            cout << "dejar muy en claro que la atencion a nuestros usuarios es lo mas imporante dentro de la empresa" << endl;
+
+            cout << ",por ello siempre estamos muy atentos para recibir sugerencias o criticas de nuestro usuarios"<<endl;
+
+            cout << "para poder mejorar el servicio brindado" << endl;
+
+            cout << endl;
+
+            cout << " Atte: Hoteles Rustico S.A.C 2022 " << endl;
+
+            cout << endl;
+
+
+            break;
+
+        case 5:
+
+            cout << "Califique su estadia (1-5)" << endl;
+
+            cin >> cali;
+
+            if (cali == 1)
+            {
+                cout << "\nSu calificacion es " << cali << " [MALO]" << endl << endl;
+            }
+            else
+            {
+                if (cali == 2)
+                {
+                    cout << "\nSu calificacion es " << cali << " [REGULAR]" << endl << endl;
+
+                }
+                else
+                {
+                    if (cali == 3)
+                    {
+                        cout << "\nSu calificacion es " << cali << " [BUENO]" << endl << endl;
+
+                    }
+                    else
+                    {
+                        if (cali == 4)
+                        {
+                            cout << "\nSu calificacion es " << cali << " [MUY BUENA]" << endl << endl;
+
+                        }
+                        else
+                        {
+                            if (cali == 5)
+                            {
+                                cout << "\nSu calificacion es " << cali << " [EXCELENTE]" << endl << endl;
+                            }
+                        }
+                    }
+                }
+            }
+
+            break;
+        case 6:
+
+            cout << " ÉÉÉÉÉÉ REGLAMENTO Y NORMAS ÉÉÉÉÉÉ " << endl;
+
+            cout << " I.- REGISTRO :" << endl;
+
+            cout << " Todo huesped tanto el individual como el de grupo debera de llenar una hoja de registro de manera individual" << endl;
+
+            cout << " o bien por cada habitación, misma que le sera proporcionada a su llegada en la recepcion del Hotel." << endl;
+
+            cout << "\nII.- OBLIGACION DE INFORMACION POR PARTE DEL HUESPED:" << endl;
+
+            cout << " Es obligacion de los huespedes informar a la administracion del Hotel" << endl;
+
+            cout << "de padecimientos o enfermedades contagiosas, fallecimientos, infracciones o delitos que acontezcan en el establecimiento y sean de su conocimiento," << endl;
+
+            cout << " a fin de que el Hotel pueda a su vez, tomar las medidas oportunas y dar cuenta inmediata a la autoridad cuando proceda.Si algun huesped enfermase, la recepcion del" << endl;
+
+            cout << " hotel deberá llamar a un medico y podra ser atendido en su cuarto con cargo al huesped; si la enfermedad fuera contagiosa el huesped sera trasladado por su cuenta al lugar adecuado." << endl;
+
+            cout << "\nIII.- PROHIBICIONES" << endl;
+
+            cout << "1.Esta prohibido el consumo de drogas toxicas, estupefacientes o sustancias psicotropicas, dentro de cualquier area del hotel, de esta infracción se dara cuenta inmediatamente a las autoridades correspondientes." << endl;
+
+            cout << "2.Queda prohibido alterar el orden o causar molestias a los demas usuarios dentro del establecimiento, usar la corriente electrica y los equipos mecanicos instalados en las habitaciones para otros fines que no sean a los que se estan destinados." << endl;
+
+            break;
+
+        case 7:
+            printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 187);
+
+            cout << endl;
+
+            printf("                                                                           %c", 186);
+
+            cout << endl;
+            cout << "-------------------- HASTA LUEGO, VUELTA PRONTO *  *  *   -----------------";
+
+            printf("%c", 186);
+
+            cout << endl;
+
+            printf("                                                                           %c", 186);
+
+            cout << endl;
+
+            printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 205, 188);
+
+
+
+            exit(EXIT_SUCCESS);
+
+            break;
+
+
+        default:
+
+            cout << " [ELECCION NO VALIDA] // digite una opcion valida, por favor " << endl;
+
+        }
+    }
+
+
+    return 0;
+}
